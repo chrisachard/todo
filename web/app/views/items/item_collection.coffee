@@ -22,16 +22,15 @@ module.exports = class ItemCollectionView extends Backbone.View
     if e.keyCode == 13 # On Enter
       @addNewItem()
 
-  modClosed: (mod) =>
-    @collection.remove mod
-
   render: =>
     @$el.html @template
     
     item_container = @$el.find(".items_list")
 
     for model in @collection.models
-      model.on "closed", @modClosed
+      model.on "closed", () =>
+        @collection.remove(model)
+
 
       item_view = new ItemView
         model: model

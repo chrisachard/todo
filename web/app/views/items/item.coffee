@@ -7,11 +7,10 @@ module.exports = class ItemView extends Backbone.View
     @template = require "templates/items/show"
 
   events: =>
-    "click .close": "closeEvent"
+    "click .close": "closeModel"
 
-  closeEvent: =>
-    # Remove from collection here
-    @model.trigger "closed", @model
+  closeModel: =>
+    @model.close()
 
   render: ->
     @$el.html @template
