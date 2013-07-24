@@ -1,0 +1,10 @@
+
+<form class="form-inline" onsubmit="return false;">
+  <input id="new_item" type="text" class="input-large" placeholder="Enter an Item">
+  <input type="submit" class="btn add_new_item">
+</form>
+
+
+<div class="items_list span4">
+</div>
+
